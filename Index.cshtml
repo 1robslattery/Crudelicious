@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model dish
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to CRUDelicious</h1>
+</div>
+
+    <p>Check out some recent dishes!  <a href="/NewDish">"Add a Dish!"</a>
+
+<hr>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <ul style="list-style-type:none;">
+                @{
+                    foreach(var d in ViewBag.All)
+                    {
+                        <li><a href="DishID/@d.DishID">@d.Name</a></li>
+                    }
+                }
+            </div>
+
+            <div class="col-sm-6">
+                <ul style="list-style-type:none;">
+                @{
+                    foreach(var d in ViewBag.All)
+                    {
+                        <li> by @d.Chef</li>
+                    }
+                }
+                </ul>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model dish
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+				<a href="/"><button><b>Home</b></button></a>
+				<a href="/delete/@ViewBag.selectedDish.DishID"><button><b>Delete Dish</b></button></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="text-center">
+			<h1>@ViewBag.selectedDish.Name</h1>
+			<h3>@ViewBag.selectedDish.Chef</h3>
+	</div>
+
+<hr>
+
+	<div class="text-center">
+		<p>@ViewBag.selectedDish.Description</p>
+	</div>
+
+	<div class="text-left">
+		<p><b>Calories:  </b>@ViewBag.selectedDish.Calories</p>
+		<p><b>Tastiness:  </b>@ViewBag.selectedDish.Tastiness</p>
+		<a href="/edit/@ViewBag.selectedDish.DishID"><button><b>Edit</b></button></a>
+	</div>

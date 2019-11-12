@@ -1,0 +1,51 @@
+<p><a href="/"><button><b>Home</b></button></a>
+
+	<div class="text-center">
+		<h2><b><i>Edit:  </b>@Model.Name</i></h2>
+	</div>
+
+@model dish
+
+    <form action="/updateDish/@Model.DishID" method="post">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label>Chef's Name</label>
+                    <input type="text" name="Chef" class="form-control" value="@Model.Chef">
+                    <span asp-validation-for="Chef" style="color:red;"></span>
+                </div>
+                <div class="form-group">
+                    <label>Name of Dish</label>
+                    <input type="text" name="Name" class="form-control" value="@Model.Name">
+                    <span asp-validation-for="Name" style="color:red;"></span>
+                </div>
+					<div class="form-group">
+                    <label># of Calories</label>
+                    <input type="number" name="Calories" class="form-control" value="@Model.Calories">
+                    <span asp-validation-for="Calories" style="color:red;"></span>
+                </div>				
+            </div>
+            <div class="col-sm-4">
+				 <div class="form-group">
+                    <label>Tastiness</label>
+					<select type="number" name="Tastiness" class="form-control" value="@Model.Tastiness">
+                        <option value=""></option>
+						<option value=1>1</option>
+						<option value=2>2</option>
+						<option value=3>3</option>
+						<option value=4>4</option>
+						<option value=5>5</option>
+					</select>
+                    <span asp-validation-for="Tastiness" style="color:red;"></span>
+                </div>
+			</div>
+			<div class="col-sm-4">
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" name="Description" class="form-control" value="@Model.Description"><br>
+                    <span asp-validation-for="Description" style="color:red;"></span>
+					<input type="submit" value="Edit Dish" class="btn btn-outline-success">
+                </div>
+            </div>
+        </div>
+    </form>
